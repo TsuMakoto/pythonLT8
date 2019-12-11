@@ -4,6 +4,7 @@ title: 業務でboto3を導入し、Text2Speechを半自動化した話
 theme: uncover
 class: invert
 image: https://marp.app/og-image.jpg
+size: 16:9
 
 
 # 業務でboto3を導入し、Text2Speechを半自動化した話
@@ -15,7 +16,7 @@ image: https://marp.app/og-image.jpg
 - 普段はRubyやJuliaを書いてます(あれ？)
 - 趣味: ポケモン
 
-![bg right:50% height:80%](https://avatars3.githubusercontent.com/u/49139020?s=460&v=4)
+![bg right:50% height:80%](img/49139020)
 
 # なにがあったのか？
 * 上司) AWSのAmazon Polly使って、音声案内作っといて〜
@@ -28,15 +29,15 @@ image: https://marp.app/og-image.jpg
 
 ## おもんな！！
 やりたくない！！
-![w:200px](img/thumbnail_yaruki_nai_suit.jpg)
+![bg right:50% height:80%](img/yaruki_nai_suit_man.png)
 
-## boto3というものがあるらしい！
+## 自動化できるらしい！
 やる！！
-![w:200px](img/thumbnail_yaruki_aru_suit.jpg)
+![bg right:50% height:80%](img/yaruki_aru_suit_man.png)
 
 # 業務を半自動化した話
 
-# 業務を~~半自動化した話~~ 効率化した話
+# 業務を半自動化(効率化)した
 
 ## boto3で利用
 
@@ -121,5 +122,11 @@ LTをしたことない方でも大歓迎です！
 ```
 
 ## デモ
+
+## Fusic 機械学習記事
+https://fusic.co.jp/ml/5
+
+![width:600px](img/polly.png)
+
 
 # ありがとうございました！！！
