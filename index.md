@@ -147,7 +147,8 @@ response = polly.synthesize_speech(
   },
   "ContentType": "audio/mpeg",
   "RequestCharacters": "33",
-  "AudioStream": "<botocore.response.StreamingBody object at 0x7f4943354fa0>" # ここに音声データが格納されている
+  ↓ ここに音声データが格納されている
+  "AudioStream": "<botocore.response.StreamingBody object at 0x7f4943354fa0>"
 }
 ```
 

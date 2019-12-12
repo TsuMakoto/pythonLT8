@@ -1,0 +1,40 @@
+version: '3'
+
+services:
+  pythonlt8-slide:
+    container_name: pythonlt8-slide
+    image: marpteam/marp-cli
+    environment:
+      - LANG=$LANG
+    tty: true
+    stdin_open: true
+    volumes:
+      - ./publish:/home/marp/app:cached
+    ports:
+      - "3010:8080"
+      - "3011:37717"
+    command: "-s ."
+
+  pythonlt8-demo:
+    container_name: pythonlt8-demo
+    build: demo
+    tty: true
+    stdin_open: true
+    volumes:
+      - ./demo:/app:cached
+
+  pythonlt8-show:
+    container_name: pythonlt8-show
+    build:
+      context: "./demo"
+      dockerfile: "Dockerfile-show"
+    tty: true
+    stdin_open: true
+    volumes:
+      - ./demo:/app:cached
+    ports:
+      - "3012:3012"
+    command: |
+      bash -c "
+      serve -l tcp://0.0.0.0:3012
+      "
