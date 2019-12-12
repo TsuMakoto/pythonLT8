@@ -15,7 +15,7 @@ $ poetry install
 
 ```
 $ docker build . -t mimpaku_polly
-$ docker run -it --rm --mount type=bind,src=`pwd`,dst=/app mimpaku_polly bash
+$ docker run -it --rm --mount type=bind,src=`pwd`,dst=/app polly bash
 ```
 
 # Usage
