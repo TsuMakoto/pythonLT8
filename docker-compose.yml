@@ -31,7 +31,7 @@ services:
     tty: true
     stdin_open: true
     volumes:
-      - ./demo:/app:cached
+      - ./demo/data:/app:cached
     ports:
       - "3012:3012"
     command: |
