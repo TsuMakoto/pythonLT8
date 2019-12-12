@@ -44,14 +44,12 @@ size: 16:9
 ```py
 
 import boto3
-
-
 session = boto3.session.Session(profile_name='{profine_name}')
 polly = session.client('polly')
 response = polly.synthesize_speech(
   Engine='standard',
   LanguageCode='ja-JP',
-  TextType='text', # or ssml
+  TextType='text',
   VoiceId='Mizuki',
   Text='こんにちは、ミズキです。読みたいテキストをここに入力してください。',
   OutputFormat='mp3'
@@ -59,6 +57,57 @@ response = polly.synthesize_speech(
 ```
 
 ## boto3で利用
+
+```py
+
+import boto3
+session = boto3.session.Session(profile_name='{profine_name}')
+polly = session.client('polly')
+response = polly.synthesize_speech(
+  Engine='standard', # 実行エンジンを設定
+  LanguageCode='ja-JP', # 言語指定
+  TextType='text',
+  VoiceId='Mizuki',
+  Text='こんにちは、ミズキです。読みたいテキストをここに入力してください。',
+  OutputFormat='mp3'
+)
+```
+
+## boto3で利用
+
+```py
+
+import boto3
+session = boto3.session.Session(profile_name='{profine_name}')
+polly = session.client('polly')
+response = polly.synthesize_speech(
+  Engine='standard',
+  LanguageCode='ja-JP',
+  TextType='text', # ssml指定も可能
+  VoiceId='Mizuki',
+  Text='こんにちは、ミズキです。読みたいテキストをここに入力してください。',
+  OutputFormat='mp3'
+)
+```
+
+## boto3で利用
+
+```py
+
+import boto3
+session = boto3.session.Session(profile_name='{profine_name}')
+polly = session.client('polly')
+response = polly.synthesize_speech(
+  Engine='standard',
+  LanguageCode='ja-JP',
+  TextType='text',
+  VoiceId='Mizuki', # 読み上げる人を設定
+  Text='こんにちは、ミズキです。読みたいテキストをここに入力してください。', # 読み上げる文章
+  OutputFormat='mp3'
+)
+```
+
+## boto3で実行
 
 ```json
 {
@@ -77,6 +126,28 @@ response = polly.synthesize_speech(
   "ContentType": "audio/mpeg",
   "RequestCharacters": "33",
   "AudioStream": "<botocore.response.StreamingBody object at 0x7f4943354fa0>"
+}
+```
+
+## boto3で実行
+
+```json
+{
+  "ResponseMetadata": {
+    "RequestId": "0460c587-f386-4558-8f97-8ece81f05a48",
+    "HTTPStatusCode": 200,
+    "HTTPHeaders": {
+    	"x-amzn-requestid": "0460c587-f386-4558-8f97-8ece81f05a48",
+    	"x-amzn-requestcharacters": "33",
+    	"content-type": "audio/mpeg",
+   	  "transfer-encoding": "chunked",
+      "date": "Sat, 23 Nov 2019 15:41:18 GMT"
+    },
+    "RetryAttempts": "0"
+  },
+  "ContentType": "audio/mpeg",
+  "RequestCharacters": "33",
+  "AudioStream": "<botocore.response.StreamingBody object at 0x7f4943354fa0>" # ここに音声データが格納されている
 }
 ```
 
